@@ -1,20 +1,32 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
+import { Navigation, Pagination, Autoplay, Parallax } from "swiper";
 import { data } from "@/data/sliderImages";
 import Link from "next/link";
 import Image from "next/image";
 import Overlay from "./Overlay";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Hero = () => {
   return (
     <section className="w-full h-[75vh]">
       <Swiper
+        parallax={true}
+        grabCursor={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        speed={700}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
-        modules={[Navigation]}
+        modules={[Navigation, Pagination, Autoplay, Parallax]}
         className="mySwiper w-full h-full"
       >
         {data.map((item) => (
