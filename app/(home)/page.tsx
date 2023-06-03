@@ -1,7 +1,12 @@
+import Hero from "@/components/Hero";
 import React from "react";
 
 const HomePage = () => {
-  return <main className="text-8xl">HomePage</main>;
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 };
 
 export default HomePage;
